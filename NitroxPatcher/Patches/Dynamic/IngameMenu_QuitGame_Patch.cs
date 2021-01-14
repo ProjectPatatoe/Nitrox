@@ -12,11 +12,21 @@ namespace NitroxPatcher.Patches.Dynamic
         public static readonly Type TARGET_CLASS = typeof(IngameMenu);
         public static readonly MethodInfo TARGET_METHOD = TARGET_CLASS.GetMethod("QuitGame");
 
-        public static void Prefix()
+        public static void Prefix(IngameMenu __instance)
         {
             IMultiplayerSession multiplayerSession = NitroxServiceLocator.LocateService<IMultiplayerSession>();            
             multiplayerSession.Disconnect();
-            Application.Quit();
+
+            //set Permadeath to avoid saving in Async
+            //GameModeUtils.SetGameMode(GameModeOption.Permadeath, GameModeOption.None);
+            //Application.Quit();
+            
+            //UWE.CoroutineHost.StartCoroutine()
+            MainGameController.Instance.PerformGarbageAndAssetCollectionAsync();
+            __instance.ChangeSubscreen("Main");
+            __instance.mainPanel.SetActive(false);
+            UWE.Utils.lockCursor = false;
+            SceneCleaner.Open();
         }
 
         public override void Patch(Harmony harmony)
