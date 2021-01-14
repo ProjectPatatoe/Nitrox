@@ -50,6 +50,7 @@
     <Compile Include="Core\IAutoFacRegistrar.cs" />
     <Compile Include="Core\NitroxEnvironment.cs" />
     <Compile Include="Core\NitroxServiceLocator.cs" />
+    <Compile Include="DataStructures\GameLogic\Buildings\Metadata\BulkheadDoorMetadata.cs" />
     <Compile Include="DataStructures\GameLogic\PlantableItemData.cs" />
     <Compile Include="DataStructures\GameLogic\DamageTakenData.cs" />
     <Compile Include="DataStructures\GameLogic\Entities\Metadata\PrecursorDoorwayMetadata.cs" />
@@ -237,10 +238,7 @@
       <Name>LiteNetLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OS\MacOS\" />
-    <Folder Include="OS\Unix\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Autofac">
       <Version>4.9.4</Version>

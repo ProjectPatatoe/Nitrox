@@ -85,6 +85,8 @@
     <Compile Include="Patches\Dynamic\Constructable_Deconstruct_Patch.cs" />
     <Compile Include="Patches\Dynamic\ConstructorInput_Craft_Patch.cs" />
     <Compile Include="Patches\Dynamic\ConstructorInput_OnCraftingBegin_Patch.cs" />
+    <Compile Include="Patches\Dynamic\BulkheadDoor_SetState_Patch.cs" />
+    <Compile Include="Patches\Dynamic\BulkheadDoor_ToggleImmediately_Patch.cs" />
     <Compile Include="Patches\Dynamic\CrafterLogic_TryPickup_Patch.cs" />
     <Compile Include="Patches\Dynamic\Creature_ChooseBestAction_Patch.cs" />
     <Compile Include="Patches\Dynamic\CyclopsDamagePoint_OnRepair_Patch.cs" />

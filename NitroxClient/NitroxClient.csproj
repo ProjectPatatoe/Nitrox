@@ -83,6 +83,7 @@
     <Compile Include="GameLogic\Simulation\LockRequestContext.cs" />
     <Compile Include="GameLogic\Spawning\EntitySpawnerResolver.cs" />
     <Compile Include="GameLogic\Spawning\ExistingGameObjectSpawner.cs" />
+    <Compile Include="GameLogic\Spawning\Metadata\BulkheadDoorMetadataProcessor.cs" />
     <Compile Include="GameLogic\Spawning\Metadata\PrecursorDoorwayMetadataProcessor.cs" />
     <Compile Include="GameLogic\Spawning\Metadata\PrecursorKeyTerminalMetadataProcessor.cs" />
     <Compile Include="GameLogic\Spawning\Metadata\PrecursorTeleporterActivationTerminalMetadataProcessor.cs" />
