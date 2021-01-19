@@ -12,7 +12,7 @@ namespace NitroxPatcher.Patches.Dynamic
         public static readonly Type TARGET_CLASS = typeof(IngameMenu);
         public static readonly MethodInfo TARGET_METHOD = TARGET_CLASS.GetMethod("QuitGame");
 
-        public static void Prefix(IngameMenu __instance)
+        public static bool Prefix(IngameMenu __instance)
         {
             IMultiplayerSession multiplayerSession = NitroxServiceLocator.LocateService<IMultiplayerSession>();            
             multiplayerSession.Disconnect();
@@ -22,11 +22,13 @@ namespace NitroxPatcher.Patches.Dynamic
             //Application.Quit();
             
             //UWE.CoroutineHost.StartCoroutine()
-            MainGameController.Instance.PerformGarbageAndAssetCollectionAsync();
-            __instance.ChangeSubscreen("Main");
-            __instance.mainPanel.SetActive(false);
-            UWE.Utils.lockCursor = false;
-            SceneCleaner.Open();
+
+            //MainGameController.Instance.PerformGarbageAndAssetCollectionAsync();
+            //__instance.ChangeSubscreen("Main");
+            //__instance.mainPanel.SetActive(false);
+            //UWE.Utils.lockCursor = false;
+            //SceneCleaner.Open();
+            return true;
         }
 
         public override void Patch(Harmony harmony)

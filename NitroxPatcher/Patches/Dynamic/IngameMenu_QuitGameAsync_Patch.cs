@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using HarmonyLib;
+using NitroxModel.Logger;
 using UnityEngine;
 
 namespace NitroxPatcher.Patches.Dynamic
@@ -12,15 +13,18 @@ namespace NitroxPatcher.Patches.Dynamic
 
         public static bool Prefix(bool quitToDesktop)
         {
+            Log.Debug("quitToDesktop:" + quitToDesktop);
             if (!quitToDesktop)
             {
                 UWE.Utils.lockCursor = false;
+                return true;
             }
             else
             {
                 Application.Quit();
+                return false;
             }
-            return false;
+            //return false;
         }
 
         public override void Patch(Harmony harmony)
